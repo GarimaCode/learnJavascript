@@ -1,3 +1,5 @@
+import {newFunction} from "./util.js";
+
 //Javascript is compiled or execute by java script engines
 //JIT compilers are faster than lanaguage which are intepreted executes in native machine code. 
 //JIT complier translates source code at run to machine lanuage before executing
@@ -32,7 +34,7 @@ variable1 = 5000 //variabnle assigment
 let variable2 = 20; // variable declaration and assignment
 console.log("variable1: "+variable1);
 console.log("variable2: "+variable2);// varriable printing
-variable3 = 234;// declaring and assigning without let,var or const
+let variable3 = 234;// declaring and assigning without let,var or const
 console.log(variable3);
 /**variable4;
 console.log(variable4);//Uncaught ReferenceError: variable4 is not defined**/
@@ -298,9 +300,9 @@ let ans = {
 
 console.log(ans);
 
-id_updated = new Number(id).valueOf();
-available_updated = available === 'true';
-count_updated = new Number(count).valueOf();
+let id_updated = new Number(id).valueOf();
+let available_updated = available === 'true';
+let count_updated = new Number(count).valueOf();
 
 ans = {
     'id': id_updated, 
@@ -528,7 +530,7 @@ for(var i = 0; i < 10; i++){ // For loop to make 10 iterations
 console.log('Program ended.') // Print statement to tell the program ended`1e4r5][pomifdz .p]
 
 
-import {newFunction} from "./util.js";
+
 
 //flow
 for(let i =0; i<5; i++){
@@ -744,12 +746,12 @@ let populationArray =
   b();
 
   let sampleArray = [10,20,30,40];
-  let arr = [10, 20, 30, 40, 50]; // initialise an array and assign to arr
-  console.log(arr[1]);
+  let arrNew = [10, 20, 30, 40, 50]; // initialise an array and assign to arr
+  console.log(arrNew[1]);
   arr.forEach((val, ind, array) => { // arrow function to print arguments // forEach is a overloaded argument and can take 3 argument element,index and array
       console.log("Value:", val, " Index:", ind, " arr:",array); // print values
       });
-  console.log(arr); // print array assigned to arr
+  console.log(arrNew); // print array assigned to arr
 
   arr.forEach((_,index) => {
       console.log("print index", index);
@@ -761,9 +763,9 @@ let populationArray =
    * The function that will be passed is given arguments in the following order by the filter method.
    */
 
-   let arr1 = arr.filter(a => a > 30); // Filter elements greater than 30
-   console.log("arr:",arr); // print original array
-   console.log("elements greater than 30:",arr1); // print filtered array
+   let arrFilter = arrNew.filter(a => a > 30); // Filter elements greater than 30
+   console.log("arr:",arrNew); // print original array
+   console.log("elements greater than 30:",arrFilter); // print filtered array
    
    let findVariable = arr.find(a => a >30);
    console.log("varible found is :",findVariable);
