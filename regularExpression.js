@@ -79,3 +79,20 @@ Numeric digit: The password contains at least one digit (0-9).
 Special Character: The password contains at least one special character (any character other than {0-9, a-z, A-Z}).
 Given the above factors, use RegExes and its test method to return a boolean if true if the password meets the above criteria. It will return false if it does not.
  */
+
+let isSafe = function(password)
+{
+    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W]).{6,}$/;
+    return regex.test(password);
+}
+
+var test = [
+    "failpassword@1", // should fail (No uppercase)
+    "Failpassword2", // should fail (No special character)
+    "FAILPASSWORD@3", // should fail (No lowervase)
+    "Fp@4", // should fail (length less than 6)
+    "PassPassword@1", // should pass
+];
+
+test.forEach(x => console.log(x," : ",isSafe(x))); // run isSafe for each value
+
