@@ -82,7 +82,7 @@ Given the above factors, use RegExes and its test method to return a boolean if 
 
 let isSafe = function(password)
 {
-    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W]).{6,}$/;
+    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W]).{6,}$/; //passwordRegex
     return regex.test(password);
 }
 

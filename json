@@ -1,0 +1,17 @@
+JSON -Javascript Object Notation 
+    is a lightweight text-based language that helps store data
+ JSON is used when exchanging data between a browser and a server, 
+ and when generally the data transferred can only be text-based. 
+ Since any JavaScript object can be converted into a JSON text, it is essential when dealing with JavaScript.
+
+ key-value pairs are always placed between braces { }
+
+ { 
+    "key" : "value",
+    "number" : 1,
+    "string" : "string value",
+    "boolean" : true,
+    "array" : [1, 2, "three", true],
+    "object" : {"key" : "value"},
+    "Null" : null,
+}

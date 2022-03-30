@@ -922,35 +922,67 @@ var square = function(n)
     return total; // <----- fix this
 }
 
-var twoSum = function(nums, target) {
-    let ansArray = [];
 
-    for (let i = 0;i < nums.length; i++){
-        for(let j = i+1;j < nums.length; j++){
-            if (nums [i]+nums[j] === target){
-                ansArray.push(i,j);
-            }
-        }
+//find max number in  array recursive
+
+function max(inputArr){
+    if(inputArr.length === 0){
+        //best case scenario;
+        return -1;
     }
-    return ansArray;
-};
-console.log(twoSum([3,2,4],7));
 
-var optimizeTwoSUm = function(nums, target){
-    let ansArray = [];
-    let sumChecker = {};
-    nums.forEach((item,index)=> {
-        let temp = target - item;
-        if (sumChecker.hasOwnProperty(temp)){
-            ansArray.push(index,sumChecker[temp])
-        }
-        else{
-            sumChecker[item] = index; 
-            console.log(sumChecker);
-        }
-    })
-    return ansArray;
+    if(inputArr === 1){
+        //best case scenario 2 , return value at 0 position.
+        return inputArr[0];
+    }
+
+    else{
+        var max_subarray = max_helper(arr.slice(1)); 
+        // compare the max of remaining array with your value and return accordingly
+        if(arr[0] > max_subarray)
+            return arr[0];
+        else
+            return max_subarray;
+    }
 }
 
-console.log(optimizeTwoSUm([3,2,4],7));
+//fibonnachi series
 
+function fibonachi(inputNumber){
+    if(inputNumber === 0){
+        return 0;
+    }
+    if(inputNumber === 1){
+        return 1;
+    }
+
+    return fibonachi(inputNumber - 1) + fibonachi(inputNumber - 2);
+}
+
+let number = 10;
+console.log(`${number} fibonachi number is  ${fibonachi(number)}`);
+
+//pascals triangle
+
+function getpascalline(linenumber){
+
+    if (linenumber === 0){
+        return [1];
+    }
+
+    else{
+        let line = [1];
+        let previousline = getpascalline(linenumber-1);
+
+        for (let i = 0;i<previousline.length -1;i++){
+            line.push(previousline[i] + previousline[i+1]);
+        }
+
+        line.push(1);
+
+        return line;
+    }
+
+}
+
+console.log(getpascalline(3));
